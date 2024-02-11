@@ -13,6 +13,11 @@ public class TouristRepository {
 
     public TouristRepository() {
         attractions.add(new TouristAttraction("flyvergrillen", "et spisested og udsigtspunkt over flyvebanen i Kastrup"));
+        attractions.add(new TouristAttraction("Cisternerne", "En tidligere vandreservoir under Frederiksberg Hill som nu er en kunst udstillingsplads."));
+        attractions.add(new TouristAttraction("BabyZoo på Gavnø Slot", "En lille zoologisk have, der fokuserer på babydyr."));
+        attractions.add(new TouristAttraction("Rabjerg Mile", "En vandrende sandklit nær Skagen."));
+        attractions.add(new TouristAttraction("Verdenskortet ved Klejtrup Sø", "En stor park med et stort kort over verden i skala 1:100.000."));
+        attractions.add(new TouristAttraction("Gravhøjene i Mols Bjerge", "Præhistoriske gravhøje med fantastisk udsigt."));
     }
 
     //CRUD metoder
