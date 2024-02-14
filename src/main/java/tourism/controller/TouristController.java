@@ -46,6 +46,7 @@ public class TouristController {
 
     @DeleteMapping("/{name}")
     public ResponseEntity<?> deleteAttration(@PathVariable String name) {
+        service.deleteAttraction(name);
         return ResponseEntity.ok(name + " er slettet");
     }
 }
