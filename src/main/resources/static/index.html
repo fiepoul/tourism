@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="da" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Den danske turistguide</title>
@@ -14,9 +14,9 @@
     <section>
         <h2>Udvalgte Attraktioner</h2>
         <ul>
-            <li><a href="http://localhost:8080/attractions/flyvergrillen">Flyvergrillen</a></li>
-            <li><a href="http://localhost:8080/attractions/Cisternerne">Cisternerne</a></li>
-            <li><a href="http://localhost:8080/attractions/RabjergMile">Rabjerg Mile</a></li>
+            <li th:each="attraction : ${attractions}">
+                <a th:href="@{'/attractions/' + ${attraction.name}}" th:text="${attraction.name}">Attraktion Navn</a>
+            </li>
         </ul>
     </section>
     <section>

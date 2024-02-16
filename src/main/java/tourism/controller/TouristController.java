@@ -9,8 +9,8 @@ import tourism.service.TouristService;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("attractions")
+@Controller
+@RequestMapping("/attractions")
 public class TouristController {
     private final TouristService service;
 
