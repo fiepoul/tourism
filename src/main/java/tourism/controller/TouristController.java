@@ -22,9 +22,9 @@ public class TouristController {
 
     // CRUD endpoints
     @GetMapping
-    public ResponseEntity<List<TouristAttraction>> getAttractions() {
+    public String getAttractions() {
         List<TouristAttraction> attractions = service.getAllAttractions();
-        return ResponseEntity.ok(attractions);
+        return "attractions-list";
     }
 
     @GetMapping("/{name}")
