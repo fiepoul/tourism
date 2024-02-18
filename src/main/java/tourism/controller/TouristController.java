@@ -1,5 +1,6 @@
 package tourism.controller;
 
+import org.springframework.ui.Model;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -22,8 +23,9 @@ public class TouristController {
 
     // CRUD endpoints
     @GetMapping
-    public String getAttractions() {
+    public String getAttractions(Model model) {
         List<TouristAttraction> attractions = service.getAllAttractions();
+        model.addAttribute("attractions", attractions);
         return "attractions-list";
     }
 
