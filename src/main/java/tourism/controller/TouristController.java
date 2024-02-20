@@ -26,7 +26,7 @@ public class TouristController {
     public String getAttractions(Model model) {
         List<TouristAttraction> attractions = service.getAllAttractions();
         model.addAttribute("attractions", attractions);
-        return "attractions-list";
+        return "attractionList";
     }
 
     @GetMapping("/{name}")

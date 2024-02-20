@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Merriweather', serif; /* En blød skrifttype */
+    background-color: #fffbdc; /* En lyssegul baggrund */
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2 {
+    color: #a13941; /* Bruger den mørkerøde farve for kontrast */
+}
+
+.container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff; /* En ren hvid baggrund for indholdet */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* En subtil, blød skygge */
+    border-radius: 10px; /* Bløde, afrundede hjørner for containeren */
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: separate; /* Sørger for at 'border-spacing' virker */
+    border-spacing: 0 10px; /* Giver lidt plads mellem rækker */
+    box-shadow: none; /* Fjerner skygge */
+}
+
+th, td {
+    padding: 15px;
+    background-color: #fff; /* Hvid baggrund for cellerne */
+    text-align: left;
+    border: none; /* Fjerner standardbordernes */
+    border-radius: 5px; /* Bløde, afrundede hjørner for cellerne */
+}
+
+th {
+    background-color: #a13941; /* Mørkerød farve for tabelheadere */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Tilføjer afstand mellem bogstaver for en raffineret effekt */
+}
+
+tr {
+    background-color: transparent; /* Gør rækkerne transparente for at understøtte afrunding og spacing */
+}
+
+/* Tilføjer en hover-effekt til rækker for interaktivitet */
+tr:hover td {
+    background-color: #ffeded; /* En meget lys rød farve ved hover */
+}
+
+/* Style links og knapper */
+a, button {
+    background-color: #a13941; /* Mørkerød */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px; /* Afrundede hjørner for knapper og links */
+    transition: background-color 0.3s;
+}
+
+a:hover, button:hover {
+    background-color: #8b2e35; /* En mørkere rød ved hover */
+    color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Skygge for at løfte element ved hover */
+    transform: scale(1.05); /* Let forstørrelse ved hover */
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #fffbdc;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header, main, footer {
+    text-align: center;
+    padding: 2rem;
+}
+
+h1 {
+    color: #a13941;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    color: #6d2e2b;
+    margin: 1rem 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 1rem 0;
+}
+
+a {
+    color: #a13941;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #6d2e2b;
+}
+
+footer {
+    background-color: #a13941;
+    color: white;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 80%;
+        margin: auto;
+    }
+}
