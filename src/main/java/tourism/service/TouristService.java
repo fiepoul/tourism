@@ -5,7 +5,9 @@ import org.springframework.stereotype.Service;
 import tourism.model.TouristAttraction;
 import tourism.repository.TouristRepository;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TouristService {
@@ -35,6 +37,11 @@ public class TouristService {
 
     public void deleteAttraction(String name) {
         repository.delete(name);
+    }
+
+    public List<String> getTagsForAttraction(String name) {
+        Optional<TouristAttraction> attraction = repository.findByName(name);
+        return attraction.map(TouristAttraction::getTags).orElse(Collections.emptyList());
     }
 
 

@@ -26,7 +26,15 @@ public class TouristController {
     public String getAttractions(Model model) {
         List<TouristAttraction> attractions = service.getAllAttractions();
         model.addAttribute("attractions", attractions);
-        return "attractionList";
+        return "attractionList"; //thymeleaf skabelonen
+    }
+
+    @GetMapping("/{name}/tags")
+    public String showTags(@PathVariable("name") String name, Model model) {
+        List<String> tags = service.getTagsForAttraction(name);
+        model.addAttribute("tags", tags);
+        model.addAttribute("attractionName", name);
+        return "tags"; //thymeleaf skabelonen
     }
 
     @GetMapping("/{name}")

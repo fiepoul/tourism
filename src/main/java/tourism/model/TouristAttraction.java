@@ -24,6 +24,10 @@ public class TouristAttraction {
         return description;
     }
 
+    public List<String> getTags() {
+        return tags;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
