@@ -128,3 +128,33 @@ footer {
         margin: auto;
     }
 }
+
+.tags-list {
+    margin: 20px 0;
+}
+
+.tags-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tags-list li {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+.btn-back {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #a13941;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.btn-back:hover {
+    background-color: #8b2e35;
+}
