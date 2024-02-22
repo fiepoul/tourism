@@ -5,10 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import tourism.model.AttractionTag;
 import tourism.model.TouristAttraction;
 import tourism.service.TouristService;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/attractions")
@@ -41,6 +44,32 @@ public class TouristController {
     public ResponseEntity<TouristAttraction> getAttractionsByName(@PathVariable String name) {
         TouristAttraction attraction = service.getAttractionByName(name);
         return ResponseEntity.ok(attraction);
+    }
+
+    @PostMapping("/save")
+    public String saveAttraction(@ModelAttribute TouristAttraction attraction, @RequestParam List<String> tags) {
+        // Konverter streng tags til enum værdier
+        List<AttractionTag> enumTags = tags.stream()
+                .map(tagStr -> AttractionTag.valueOf(tagStr.toUpperCase().replace(" ", "_")))
+                .collect(Collectors.toList());
+
+        // Opret ny instans af TouristAttraction med enum tags
+        TouristAttraction newAttraction = new TouristAttraction(
+                attraction.getName(),
+                attraction.getDescription(),
+                attraction.getLocation(),
+                enumTags
+        );
+
+        service.addAttraction(newAttraction);
+        return "redirect:/attractions"; // Redirect til liste over attraktioner
+    }
+
+    @GetMapping("/add")
+    public String showAddAttractionForm(Model model) {
+        model.addAttribute("attraction", new TouristAttraction("", "", "", new ArrayList<>())); // Opretter en ny, tom instans for form binding
+        model.addAttribute("allTags", AttractionTag.values()); // Sender alle tags til modellen
+        return "add-attraction"; // Navnet på din Thymeleaf skabelon
     }
     @PostMapping("/add")
     public ResponseEntity<?> addAttraction(@RequestBody TouristAttraction newAttraction) {
