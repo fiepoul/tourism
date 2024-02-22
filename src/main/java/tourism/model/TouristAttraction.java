@@ -2,14 +2,15 @@ package tourism.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class TouristAttraction {
     private String name;
     private String description;
     private String location;
-    private List<String> tags;
+    private Set<AttractionTag> tags;
 
-    public TouristAttraction(String name, String description, String location, List<String> tags) {
+    public TouristAttraction(String name, String description, String location, Set<AttractionTag> tags) {
         this.name = name;
         this.description = description;
         this.location = location;
@@ -24,7 +25,7 @@ public class TouristAttraction {
         return description;
     }
 
-    public List<String> getTags() {
+    public Set<AttractionTag> getTags() {
         return tags;
     }
 
