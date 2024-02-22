@@ -104,13 +104,13 @@ li {
 }
 
 a {
-    color: #a13941;
+    color: #a19c39;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #6d2e2b;
+    color: #3f3939;
 }
 
 footer {

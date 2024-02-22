@@ -18,6 +18,7 @@
     <tr th:each="attraction : ${attractions}">
         <td th:text="${attraction.name}">Navn</td>
         <td th:text="${attraction.description}">Beskrivelse</td>
+        <td><a href="/attractions/${attraction.name}/tags" th:href="@{'/attractions/' + ${attraction.name} + '/tags'}">Tags</a></td>
     </tr>
     </tbody>
 </table>
