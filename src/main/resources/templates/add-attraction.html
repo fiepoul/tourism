@@ -13,11 +13,13 @@
   <label for="description">Beskrivelse:</label>
   <input type="text" id="description" th:field="*{description}" />
 
-  <label for="location">Landsdel:</label>
-  <select id="location" th:field="*{location}">
-    <option value="" th:text="Vælg landsdel"></option>
-    <option th:each="loc : ${allLocations}" th:value="${loc}" th:text="${loc}"></option>
-  </select>
+  <div class="form-group">
+    <label for="location">Område:</label>
+    <select id="location" th:field="*{location}" required>
+      <option th:each="loc : ${allLocations}" th:value="${loc}" th:text="${loc}"
+              th:selected="${loc == attraction.location}"></option>
+    </select>
+  </div>
 
   <div th:each="tag : ${allTags}">
     <input type="checkbox" th:id="${'tag' + tag}" th:name="tags" th:value="${tag.name()}" />

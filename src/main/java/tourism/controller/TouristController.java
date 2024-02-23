@@ -52,15 +52,19 @@ public class TouristController {
         if (attraction != null) {
             model.addAttribute("attraction", attraction);
             model.addAttribute("allTags", AttractionTag.values());
-            return "edit-attraction";
+            return "updateAttraction";
         } else {
             return "redirect:/attractions";
         }
     }
 
-    @PostMapping("/update")
-    public String updateAttraction(@ModelAttribute TouristAttraction attraction) {
-        service.updateAttraction(attraction.getName(), attraction);
+    @PostMapping("/{name}/update")
+    public String updateAttraction(@PathVariable String name, @ModelAttribute TouristAttraction attraction, @RequestParam List<String> tags) {
+        List<AttractionTag> enumTags = tags.stream()
+                .map(AttractionTag::valueOf)
+                .collect(Collectors.toList());
+        attraction.setTags(enumTags);
+        service.updateAttraction(name, attraction);
         return "redirect:/attractions";
     }
 
@@ -82,17 +86,6 @@ public class TouristController {
         model.addAttribute("allLocations", service.getLocations()); //todo: hvad går galt her? måske genstart
         model.addAttribute("allTags", AttractionTag.values()); // Sender alle tags til modellen
         return "add-attraction";
-    }
-    @PostMapping("/add")
-    public ResponseEntity<?> addAttraction(@RequestBody TouristAttraction newAttraction) {
-        service.addAttraction(newAttraction);
-        return ResponseEntity.ok("En ny attraktion er blevet tilføjet: " + newAttraction.getName());
-    }
-
-    @PutMapping("/update/{name}")
-    public ResponseEntity<?> updateAttraction(@PathVariable String name, @RequestBody TouristAttraction attraction) {
-        service.updateAttraction(name, attraction);
-        return ResponseEntity.ok("Attraktionen " + name + " er blevet opdateret");
     }
 
     @DeleteMapping("/{name}")
