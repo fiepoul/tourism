@@ -41,9 +41,10 @@ public class TouristController {
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity<TouristAttraction> getAttractionsByName(@PathVariable String name) {
+    public String getAttractionByName(@PathVariable String name, Model model) {
         TouristAttraction attraction = service.getAttractionByName(name);
-        return ResponseEntity.ok(attraction);
+        model.addAttribute("attraction", attraction);
+        return "attraction-detail";
     }
 
     @GetMapping("/{name}/edit")
