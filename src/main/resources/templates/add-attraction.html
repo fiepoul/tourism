@@ -7,11 +7,15 @@
 </head>
 <body>
 <form action="#" th:action="@{/attractions/save}" th:object="${attraction}" method="post">
+  <div class="form-group">
   <label for="name">Navn:</label>
   <input type="text" id="name" th:field="*{name}" />
+  </div>
 
+  <div class="form-group">
   <label for="description">Beskrivelse:</label>
   <input type="text" id="description" th:field="*{description}" />
+  </div>
 
   <div class="form-group">
     <label for="location">Område:</label>
@@ -21,13 +25,17 @@
     </select>
   </div>
 
+  <div class="tags-container">
   <div th:each="tag : ${allTags}">
     <input type="checkbox" th:id="${'tag' + tag}" th:name="tags" th:value="${tag.name()}" />
     <label th:for="${'tag' + tag}" th:text="${tag.getDisplayValue()}">Tag</label>
   </div>
+  </div>
 
-  <button type="submit">OK</button>
-  <button type="reset">Fortryd</button>
+  <div class="form-buttons">
+    <button type="submit" class="btn-primary">OK</button>
+    <button type="reset" class="btn-secondary">Fortryd</button>
+  </div>
 </form>
 </body>
 </html>

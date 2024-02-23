@@ -108,3 +108,80 @@ footer {
     background-color: #ddd;
     color: #333;
 }
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+}
+
+.form-group input[type="text"], .form-group select, .form-group button {
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.form-buttons button {
+    width: auto;
+    padding: 8px 16px;
+}
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    max-width: 600px; /* Juster denne værdi efter behov */
+    margin: 0 auto;
+}
+
+.tags-container > div {
+    display: flex;
+    align-items: center;
+}
+
+.center-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Fuld højde af viewport */
+}
+
+.form-container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; /* Maksimal bredde af form */
+}
+
+/* Tilføj margin til bunden af hver form-group undtagen den sidste */
+.form-group:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+/* Centrer tekst og knapper */
+.form-group label,
+.form-buttons button {
+    display: block;
+    text-align: center;
+}
+
+/* Bredden af input og select bør være ens for at aligne dem vertikalt */
+.form-group input[type="text"],
+.form-group select {
+    width: calc(100% - 1rem); /* Trækker padding/margin fra bredden */
+    margin: auto; /* Centrerer automatisk inden i .form-group */
+}
+
+/* Styling for at gøre checkbox labels og input inline */
+.tags-container label,
+.tags-container input {
+    display: inline-block;
+    text-align: center;
+}
