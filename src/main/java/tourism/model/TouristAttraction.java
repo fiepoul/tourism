@@ -17,6 +17,13 @@ public class TouristAttraction {
         this.tags = tags;
     }
 
+    public TouristAttraction() {
+        this.name = "";
+        this.description = "";
+        this.location = "";
+        this.tags = new ArrayList<>();
+    }
+
     public String getName() {
         return name;
     }
@@ -39,5 +46,9 @@ public class TouristAttraction {
 
     public String getLocation() {
         return location;
+    }
+
+    public void setTags(List<AttractionTag> tags) {
+        this.tags = tags;
     }
 }

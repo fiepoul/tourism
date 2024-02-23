@@ -22,6 +22,20 @@ public class TouristRepository {
         attractions.add(new TouristAttraction("Gravhøjene i Mols Bjerge", "Præhistoriske gravhøje med fantastisk udsigt.", "Mols Bjerge", List.of(AttractionTag.HISTORISK, AttractionTag.UDSIGT, AttractionTag.NATUR)));
     }
 
+    public List<String> getLocations() {
+        return List.of(
+                "Nordsjælland",
+                "København",
+                "Midtjylland",
+                "Sydjylland",
+                "Fyn",
+                "Sønderjylland",
+                "Bornholm",
+                "Vestjylland",
+                "Østjylland"
+        );
+    }
+
     //CRUD metoder
     public Optional<TouristAttraction> findByName(String name) {
         return attractions.stream().filter(attraction -> attraction.getName().equalsIgnoreCase(name)).findFirst();

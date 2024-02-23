@@ -49,5 +49,9 @@ public class TouristService {
                 .orElse(Collections.emptyList());
     }
 
+    public List<String> getLocations() {
+        return repository.getLocations();
+    }
+
 
 }

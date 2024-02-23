@@ -46,30 +46,42 @@ public class TouristController {
         return ResponseEntity.ok(attraction);
     }
 
+    @GetMapping("/{name}/edit")
+    public String editAttraction(@PathVariable String name, Model model) {
+        TouristAttraction attraction = service.getAttractionByName(name);
+        if (attraction != null) {
+            model.addAttribute("attraction", attraction);
+            model.addAttribute("allTags", AttractionTag.values());
+            return "edit-attraction";
+        } else {
+            return "redirect:/attractions";
+        }
+    }
+
+    @PostMapping("/update")
+    public String updateAttraction(@ModelAttribute TouristAttraction attraction) {
+        service.updateAttraction(attraction.getName(), attraction);
+        return "redirect:/attractions";
+    }
+
     @PostMapping("/save")
-    public String saveAttraction(@ModelAttribute TouristAttraction attraction, @RequestParam List<String> tags) {
-        // Konverter streng tags til enum værdier
-        List<AttractionTag> enumTags = tags.stream()
-                .map(tagStr -> AttractionTag.valueOf(tagStr.toUpperCase().replace(" ", "_")))
-                .collect(Collectors.toList());
+    public String saveAttraction(@ModelAttribute TouristAttraction attraction,
+                                 @RequestParam(required = false) List<AttractionTag> tags) {
 
-        // Opret ny instans af TouristAttraction med enum tags
-        TouristAttraction newAttraction = new TouristAttraction(
-                attraction.getName(),
-                attraction.getDescription(),
-                attraction.getLocation(),
-                enumTags
-        );
-
-        service.addAttraction(newAttraction);
-        return "redirect:/attractions"; // Redirect til liste over attraktioner
+        if (tags == null) {
+            tags = new ArrayList<>();
+        }
+        attraction.setTags(tags);
+        service.addAttraction(attraction);
+        return "redirect:/attractions";
     }
 
     @GetMapping("/add")
     public String showAddAttractionForm(Model model) {
-        model.addAttribute("attraction", new TouristAttraction("", "", "", new ArrayList<>())); // Opretter en ny, tom instans for form binding
+        model.addAttribute("attraction", new TouristAttraction()); // tom instans for form
+        model.addAttribute("allLocations", service.getLocations()); //todo: hvad går galt her? måske genstart
         model.addAttribute("allTags", AttractionTag.values()); // Sender alle tags til modellen
-        return "add-attraction"; // Navnet på din Thymeleaf skabelon
+        return "add-attraction";
     }
     @PostMapping("/add")
     public ResponseEntity<?> addAttraction(@RequestBody TouristAttraction newAttraction) {

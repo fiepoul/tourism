@@ -5,54 +5,81 @@ body {
     background-color: #fffbdc; /* En lyssegul baggrund */
     color: #333;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 h1, h2 {
     color: #a13941; /* Bruger den mørkerøde farve for kontrast */
+    margin-bottom: 1rem;
 }
 
-.container {
+h2 {
+    color: #6d2e2b; /* Mere specifik stil for h2 */
+}
+
+.container, header, main, footer {
     max-width: 80%;
     margin: 20px auto;
     padding: 20px;
+    text-align: center;
+}
+
+.container {
     background: #fff; /* En ren hvid baggrund for indholdet */
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* En subtil, blød skygge */
     border-radius: 10px; /* Bløde, afrundede hjørner for containeren */
 }
 
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: separate; /* Sørger for at 'border-spacing' virker */
-    border-spacing: 0 10px; /* Giver lidt plads mellem rækker */
-    box-shadow: none; /* Fjerner skygge */
+ul, .tags-list ul {
+    list-style: none;
+    padding: 0;
 }
 
-th, td {
-    padding: 15px;
-    background-color: #fff; /* Hvid baggrund for cellerne */
-    text-align: left;
-    border: none; /* Fjerner standardbordernes */
-    border-radius: 5px; /* Bløde, afrundede hjørner for cellerne */
+.tags-list li, li {
+    margin: 1rem 0;
 }
 
-th {
-    background-color: #a13941; /* Mørkerød farve for tabelheadere */
+.tags-list li {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.btn-back {
+    background-color: #a13941;
     color: white;
-    text-transform: uppercase;
-    letter-spacing: 1px; /* Tilføjer afstand mellem bogstaver for en raffineret effekt */
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-tr {
-    background-color: transparent; /* Gør rækkerne transparente for at understøtte afrunding og spacing */
+.btn-back:hover {
+    background-color: #8b2e35;
+    transform: scale(1.05);
 }
 
-/* Tilføjer en hover-effekt til rækker for interaktivitet */
-tr:hover td {
-    background-color: #ffeded; /* En meget lys rød farve ved hover */
+.form-group {
+    margin-bottom: 1rem;
 }
 
-/* Style links og knapper */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tags-container > div {
+    display: flex;
+    align-items: center;
+}
+
+.tags-container label {
+    margin-left: 0.5rem;
+}
+
 a, button {
     background-color: #a13941; /* Mørkerød */
     color: white;
@@ -60,101 +87,25 @@ a, button {
     text-decoration: none;
     border: none;
     border-radius: 5px; /* Afrundede hjørner for knapper og links */
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
 }
 
 a:hover, button:hover {
     background-color: #8b2e35; /* En mørkere rød ved hover */
-    color: #fff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Skygge for at løfte element ved hover */
-    transform: scale(1.05); /* Let forstørrelse ved hover */
-}
-
-body {
-    font-family: 'Merriweather', serif;
-    background-color: #fffbdc;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-}
-
-header, main, footer {
-    text-align: center;
-    padding: 2rem;
-}
-
-h1 {
-    color: #a13941;
-    margin-bottom: 1rem;
-}
-
-h2 {
-    color: #6d2e2b;
-    margin: 1rem 0;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin: 1rem 0;
-}
-
-a {
-    color: #a19c39;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #3f3939;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
 }
 
 footer {
     background-color: #a13941;
     color: white;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
+    position: relative; /* Ændret fra 'absolute' til 'relative' */
     width: 100%;
 }
 
 @media (min-width: 768px) {
-    .container {
-        width: 80%;
-        margin: auto;
+    .container, header, main, footer {
+        width: 80%; /* Justerer bredde for større skærme */
     }
-}
-
-.tags-list {
-    margin: 20px 0;
-}
-
-.tags-list ul {
-    list-style: none;
-    padding: 0;
-}
-
-.tags-list li {
-    background-color: #f0f0f0;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 5px;
-}
-
-.btn-back {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #a13941;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-.btn-back:hover {
-    background-color: #8b2e35;
 }

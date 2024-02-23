@@ -6,20 +6,22 @@
   <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 <body>
-<form action="#" th:action="@{/save}" th:object="${attraction}" method="post">
+<form action="#" th:action="@{/attractions/save}" th:object="${attraction}" method="post">
   <label for="name">Navn:</label>
   <input type="text" id="name" th:field="*{name}" />
 
   <label for="description">Beskrivelse:</label>
   <input type="text" id="description" th:field="*{description}" />
 
-  <label for="location">By:</label>
-  <input type="text" id="location" th:field="*{location}" />
+  <label for="location">Landsdel:</label>
+  <select id="location" th:field="*{location}">
+    <option value="" th:text="Vælg landsdel"></option>
+    <option th:each="loc : ${allLocations}" th:value="${loc}" th:text="${loc}"></option>
+  </select>
 
-  <label for="tags">Tags:</label>
   <div th:each="tag : ${allTags}">
-    <input type="checkbox" th:field="*{tags}" th:value="${tag}" />
-    <label th:text="${tag.displayValue}">Tag</label>
+    <input type="checkbox" th:id="${'tag' + tag}" th:name="tags" th:value="${tag.name()}" />
+    <label th:for="${'tag' + tag}" th:text="${tag.getDisplayValue()}">Tag</label>
   </div>
 
   <button type="submit">OK</button>
