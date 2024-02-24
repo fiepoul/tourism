@@ -18,7 +18,7 @@
     </thead>
     <tbody>
     <tr th:each="attraction : ${attractions}">
-        <td><a th:href="@{'/attractions/' + ${attraction.name}}" th:text="${attraction.name}">Navn</a></td>
+        <td><a th:href="@{'/attractions/' + ${attraction.name}}" class="attraction-link" th:text="${attraction.name}">Navn</a></td>
         <td th:text="${attraction.description}">Beskrivelse</td>
         <td th:text="${attraction.location}">By</td>
         <td>
@@ -29,6 +29,6 @@
     </tr>
     </tbody>
 </table>
-    <a th:href="@{/attractions/add}" class="btn-primary">Tilføj ny attraktion</a>
+<a th:href="@{/attractions/add}" class="add-attraction-btn">Tilføj ny attraktion</a>
 </body>
 </html>

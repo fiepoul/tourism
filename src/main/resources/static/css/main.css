@@ -1,17 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
 
+h1 {
+    font-size: 24px; /* Adjust the size as needed */
+    text-align: center;
+    color: #796768;
+    margin-bottom: 20px; /* Adds space below the headline */
+}
+
 body {
     font-family: 'Merriweather', serif;
-    background-color: #fffbdc;
+    background-color: #b79b9b;
     color: #333;
     margin: 0;
     padding: 0;
     line-height: 1.6;
 }
 
-h1, h2, th, td {
-    color: #a93c48;
-    font-size: 14px; /* Reducer skriftstørrelsen */
+h2, th, td {
+    color: #3f3939;
+    font-size: 14px;
 }
 
 .container {
@@ -27,6 +34,7 @@ table {
     width: 100%;
     margin-top: 20px;
     border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
 th, td {
@@ -36,7 +44,7 @@ th, td {
 }
 
 th {
-    background-color: #a13941;
+    background-color: #a6313e;
     color: white;
     text-transform: uppercase;
 }
@@ -58,6 +66,27 @@ a, button {
     border: none;
     border-radius: 4px;
     transition: background-color 0.3s;
+}
+
+a.attraction-link {
+    background-color: transparent;
+    color: #3f3939;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+/* Adjust hover effect */
+a.attraction-link:hover {
+    color: #a13941; /* Changes text color on hover */
+    background-color: transparent; /* Ensures background remains transparent on hover */
+}
+
+.add-attraction-btn {
+    margin-top: 20px !important;
+    margin: 20px;
 }
 
 a:hover, button:hover {
