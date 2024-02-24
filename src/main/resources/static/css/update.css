@@ -1,0 +1,36 @@
+.form-container {
+    max-width: 600px; /* Eller hvilken bredde du foretrækker */
+    margin: 0 auto; /* Centrerer containeren på siden */
+    padding: 20px; /* Tilføjer lidt polstring indeni containeren */
+    background: #ffffff; /* Vælger en baggrundsfarve */
+    border-radius: 8px; /* Giver containeren bløde hjørner */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* En let skygge for at løfte containeren fra baggrunden */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Tilføjer afstand mellem formulargrupperne */
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between; /* Fordeler knapperne i hver sin ende af containeren */
+    margin-top: 20px; /* Tilføjer afstand ovenover knapperne */
+}
+
+.btn-primary {
+    background: #007bff; /* En primær knapfarve */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: #6c757d; /* En sekundær knapfarve */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}

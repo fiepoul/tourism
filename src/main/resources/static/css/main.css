@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap');
 
 h1 {
     font-size: 24px; /* Adjust the size as needed */
     text-align: center;
-    color: #796768;
+    color: #c2bcbc;
     margin-bottom: 20px; /* Adds space below the headline */
 }
 
 body {
     font-family: 'Merriweather', serif;
-    background-color: #b79b9b;
+    background-color: #796768;
     color: #333;
     margin: 0;
     padding: 0;
@@ -30,7 +31,7 @@ th, td {
     max-width: 80%;
     margin: 20px auto;
     padding: 20px;
-    background: #fff;
+    background: #ffffff;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
@@ -49,17 +50,17 @@ th, td {
 }
 
 th {
-    background-color: #a6313e;
-    color: white;
+    background-color: #5d4043;
+    color: #bb8b8b;
     text-transform: uppercase;
 }
 
 tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f7edd7;
 }
 
 tr:hover {
-    background-color: #f4f4f4;
+    background-color: #f7edd7;
 }
 
 a, button {
@@ -136,6 +137,43 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.site-header {
+    background-color: #f7edd7; /* Updated to the prominent color from the image */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgb(196, 153, 153);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-title {
+    font-family: "Kalnia", serif;
+    color: #796768;
+    font-size: 60px;
+    display: flex; /* Added to align title and logo */
+    align-items: center; /* Aligns items vertically */
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+            "wdth" 100;
+}
+
+.site-logo {
+    margin-right: 15px;
+}
+
+/* new rule for the logo image */
+.logo-image {
+    width: 80px; /* Adjust as needed */
+    height: auto;
+    margin-right: 20px;
 }
 
 
