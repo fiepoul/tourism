@@ -4,8 +4,10 @@
   <meta charset="UTF-8">
   <title>Tilføj turistattraktion</title>
   <link rel="stylesheet" th:href="@{/css/main.css}">
+  <link rel="stylesheet" th:href="@{/css/update.css}">
 </head>
 <body>
+<div class="form-container">
 <form action="#" th:action="@{/attractions/save}" th:object="${attraction}" method="post">
   <div class="form-group">
   <label for="name">Navn:</label>
@@ -37,5 +39,6 @@
     <button type="reset" class="btn-secondary">Fortryd</button>
   </div>
 </form>
+</div>
 </body>
 </html>
