@@ -61,6 +61,10 @@ body, html {
     font-weight: 700;
 }
 
+.hero-content ul li {
+    margin-bottom: 10px; /* Adds space below each list item */
+}
+
 .button:hover {
     background-color: #8b2e35;
 }
