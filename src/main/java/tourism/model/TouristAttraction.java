@@ -51,4 +51,8 @@ public class TouristAttraction {
     public void setTags(List<AttractionTag> tags) {
         this.tags = tags;
     }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

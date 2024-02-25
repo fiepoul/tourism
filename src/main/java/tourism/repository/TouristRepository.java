@@ -30,7 +30,6 @@ public class TouristRepository {
                 "Midtjylland",
                 "Sønderjylland",
                 "Fyn",
-                "Sønderjylland",
                 "Bornholm",
                 "Vestjylland",
                 "Østjylland"
@@ -55,6 +54,8 @@ public class TouristRepository {
             if (attraction.getName().equalsIgnoreCase(name)) {
                 attraction.setName(updatedAttraction.getName());
                 attraction.setDescription(updatedAttraction.getDescription());
+                attraction.setLocation(updatedAttraction.getLocation());
+                attraction.setTags(updatedAttraction.getTags());
             }
         }
     }
