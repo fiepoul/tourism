@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Attraktion Detaljer</title>
+  <link rel="icon" type="image/png" sizes="16x16" th:href="@{/img/favicon-16x16.png}">
   <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 <body>
+<div th:replace="~{fragments/header :: site-header}"></div>
 <div class="container">
   <h1 th:text="${attraction.name}">Attraktionsnavn</h1>
   <p th:text="${attraction.description}">Beskrivelse</p>

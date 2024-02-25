@@ -140,20 +140,49 @@ footer {
 }
 
 .site-header {
-    background-color: #f7edd7; /* Updated to the prominent color from the image */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f7edd7;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgb(196, 153, 153);
 }
 
 .header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%; /* Sikre, at header-content tager hele bredden */
 }
 
-.site-title {
+.navigation-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.navigation-menu li {
+    margin-left: 20px;
+}
+
+.navigation-menu a {
+    text-decoration: none;
+    color: #c2bcbc; /* Skift til ønsket tekstfarve */
+    background-color: transparent;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navigation-menu a:hover,
+.navigation-menu a:focus {
+    color: #ffffff; /* Skift til ønsket hover/fokus farve */
+}
+
+.header-logo-link {
+    text-decoration: none;
+    background: transparent;
+    color: inherit;
     font-family: "Kalnia", serif;
     color: #796768;
     font-size: 60px;
@@ -163,6 +192,10 @@ footer {
     font-style: normal;
     font-variation-settings:
             "wdth" 100;
+}
+
+.header-logo-link:hover {
+    background: transparent;
 }
 
 .site-logo {

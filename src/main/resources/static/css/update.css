@@ -18,7 +18,7 @@
 }
 
 .btn-primary {
-    background: #007bff; /* En primær knapfarve */
+    background: #a19c39; /* En primær knapfarve */
     color: #ffffff;
     border: none;
     padding: 10px 15px;
@@ -33,4 +33,45 @@
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+input, select, textarea {
+    width: 100%; /* Sørger for at felterne fylder containeren */
+    padding: 8px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Sikrer at padding ikke tilføjer til feltets totale bredde */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #a19c39;
+    outline: none; /* Fjerner standard outline og bruger en brugerdefineret border-color */
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background: #a19c39; /* Mørkere skygge af primær farve for hover/focus */
+    color: #ffffff;
+}
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background: #545b62; /* Mørkere skygge af sekundær farve for hover/focus */
+    color: #ffffff;
+}
+
+@media (max-width: 576px) {
+    .form-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-buttons button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%; /* Får knapperne til at fylde containeren på små skærme */
+    }
 }

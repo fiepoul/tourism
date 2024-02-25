@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Turistattraktioner</title>
+    <link rel="icon" type="image/png" sizes="16x16" th:href="@{/img/favicon-16x16.png}">
     <link rel="stylesheet" th:href="@{/css/main.css}">
 </head>
 <body>
-<div th:replace="fragments/header :: site-header"></div>
+<div th:replace="~{fragments/header :: site-header}"></div>
 <h1>Turistattraktioner:</h1>
 <table>
     <thead>

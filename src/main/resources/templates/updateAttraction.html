@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Ændring af turistattraktion</title>
+  <link rel="icon" type="image/png" sizes="16x16" th:href="@{/img/favicon-16x16.png}">
   <link rel="stylesheet" th:href="@{/css/main.css}">
   <link rel="stylesheet" th:href="@{/css/update.css}">
 </head>
 <body>
+<div th:replace="~{fragments/header :: site-header}"></div>
 <div class="form-container">
   <form th:action="@{/attractions/update/{name}(name=${attraction.name})}" th:object="${attraction}" method="post">
     <div class="form-group">
