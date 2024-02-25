@@ -53,6 +53,7 @@ public class TouristController {
         if (attraction != null) {
             model.addAttribute("attraction", attraction);
             model.addAttribute("allTags", AttractionTag.values());
+            model.addAttribute("allLocations", service.getLocations());
             return "updateAttraction";
         } else {
             return "redirect:/attractions";
